@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#FA011E"
+                app:popupTheme="@style/AppTheme"
+                app:title="Todas las tareas"
+                app:titleMarginStart="41dp"
+                app:titleTextColor="#FFFFFF" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <ListView
+                android:id="@android:id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ListView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="11dp"
+                android:orientation="vertical">
+
+                <com.github.clans.fab.FloatingActionMenu
+                    android:id="@+id/opciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:menu_fab_label="Filtros">
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/todas"
+                        android:onClick="TareasTodas"
+                        app:fab_label="Todas las tareas" />
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pendientes"
+                        android:onClick="TareasPendientes"
+                        app:fab_label="Tareas Pendientes" />
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/realizadas"
+                        android:onClick="TareasRealizadas"
+                        app:fab_label="Tareas Realizadas" />
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ascendente"
+                        android:onClick="Filtro_FechasAscendente"
+                        app:fab_label="Ordenar por fecha ascendente" />
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/descendente"
+                        android:onClick="Filtro_FechasDescendente"
+                        app:fab_label="Ordenar por fecha descendente" />
+
+                </com.github.clans.fab.FloatingActionMenu>
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/boton_nuevo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="insertar"
+                    app:backgroundTint="#F30505"
+                    app:srcCompat="@drawable/icono_new" />
+            </LinearLayout>
+        </android.support.design.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
